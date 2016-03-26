@@ -86,6 +86,9 @@ public class Unresolved extends Fragment{
                                     temp.put("complaint_id", complaint_id);
                                     String created_on = complaint.getString("created_on");
                                     temp.put("author", "Posted On "+created_on);
+                                    String votes = complaint.getString("votes");
+                                    temp.put("votes", votes);
+                                    temp.put("resolve_status", resolve_status);
 
                                     complaints.put(temp);
 
@@ -109,26 +112,6 @@ public class Unresolved extends Fragment{
                             ListView listV = (ListView) view.findViewById(R.id.notifiList);
                             ListAdapter adapter = new ListAdapter(getContext(), R.layout.fragment_all_complaints, R.id.serialno, complaints_list);
                             listV.setAdapter(adapter);
-                            listV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-                                @Override
-                                public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-                                                        long arg3) {
-
-                                    Intent intent = new Intent(getContext(),ViewComplaint.class);
-                                    int complaint_id=1;
-                                    try {
-                                        complaint_id = complaints_list.get(arg2).getInt("complaint_id");
-                                    } catch (JSONException ex) {
-                                        Log.d(TAG, "Cannot Parse Response!");
-                                    }
-                                    intent.putExtra("complaint_id", complaint_id);
-                                    startActivity(intent);
-                                    ((Activity) getContext()).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                                }
-
-                            });
-                            Log.d(TAG, "response in response listener: "+response);
 
                         }
 
@@ -180,6 +163,9 @@ public class Unresolved extends Fragment{
                                     temp.put("complaint_id", complaint_id);
                                     String created_on = complaint.getString("created_on");
                                     temp.put("author", "Posted by "+posted_by+" On "+created_on);
+                                    String votes = complaint.getString("votes");
+                                    temp.put("votes", votes);
+                                    temp.put("resolve_status", resolve_status);
 
                                     complaints.put(temp);
 
@@ -203,26 +189,6 @@ public class Unresolved extends Fragment{
                             ListView listV = (ListView) view.findViewById(R.id.notifiList);
                             ListAdapter adapter = new ListAdapter(getContext(), R.layout.fragment_all_complaints, R.id.serialno, complaints_list);
                             listV.setAdapter(adapter);
-                            listV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-                                @Override
-                                public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-                                                        long arg3) {
-
-                                    Intent intent = new Intent(getContext(),ViewComplaint.class);
-                                    int complaint_id=1;
-                                    try {
-                                        complaint_id = complaints_list.get(arg2).getInt("complaint_id");
-                                    } catch (JSONException ex) {
-                                        Log.d(TAG, "Cannot Parse Response in item click listener!");
-                                    }
-                                    intent.putExtra("complaint_id", complaint_id);
-                                    startActivity(intent);
-                                    ((Activity) getContext()).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                                }
-
-                            });
-                            Log.d(TAG, "response in response listener: "+response);
 
                         }
 
@@ -267,14 +233,18 @@ public class Unresolved extends Fragment{
                                     String  posted_by = maker.getString(i);
                                     JSONObject temp = new JSONObject();
                                     boolean resolve_status = complaint.getBoolean("resolve_status");
-                                    if(resolve_status)
+                                    if(resolve_status) {
                                         continue;
+                                    }
                                     String title = complaint.getString("title");
                                     temp.put("title", title);
                                     int complaint_id = complaint.getInt("id");
                                     temp.put("complaint_id", complaint_id);
                                     String created_on = complaint.getString("created_on");
                                     temp.put("author", "Posted by "+posted_by+" On "+created_on);
+                                    String votes = complaint.getString("votes");
+                                    temp.put("votes", votes);
+                                    temp.put("resolve_status", resolve_status);
 
                                     complaints.put(temp);
 
@@ -298,26 +268,6 @@ public class Unresolved extends Fragment{
                             ListView listV = (ListView) view.findViewById(R.id.notifiList);
                             ListAdapter adapter = new ListAdapter(getContext(), R.layout.fragment_all_complaints, R.id.serialno, complaints_list);
                             listV.setAdapter(adapter);
-                            listV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-                                @Override
-                                public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-                                                        long arg3) {
-
-                                    Intent intent = new Intent(getContext(),ViewComplaint.class);
-                                    int complaint_id=1;
-                                    try {
-                                        complaint_id = complaints_list.get(arg2).getInt("complaint_id");
-                                    } catch (JSONException ex) {
-                                        Log.d(TAG, "Cannot Parse Response in item click listener!");
-                                    }
-                                    intent.putExtra("complaint_id", complaint_id);
-                                    startActivity(intent);
-                                    ((Activity) getContext()).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                                }
-
-                            });
-                            Log.d(TAG, "response in response listener: "+response);
 
                         }
 

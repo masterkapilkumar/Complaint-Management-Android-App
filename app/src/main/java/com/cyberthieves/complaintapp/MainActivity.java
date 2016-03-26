@@ -249,7 +249,7 @@ public class MainActivity extends AppCompatActivity
                             }
 
                             ListView listV = (ListView) findViewById(R.id.notifiList);
-                            ListAdapter adapter = new ListAdapter(getApplicationContext(), R.layout.fragment_all_complaints, R.id.serialno, notifications_list);
+                            NotiListAdapter adapter = new NotiListAdapter(getApplicationContext(), R.layout.fragment_notifications, R.id.serialno, notifications_list);
                             listV.setAdapter(adapter);
 
                             Log.d(TAG, "response in response listener: "+response);
