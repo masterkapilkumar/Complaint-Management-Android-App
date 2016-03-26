@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menu">
+
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/notifications"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/notification_string" />
+        <item
+            android:id="@+id/new_complaint"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/new_complaint_string" />
+    </group>
+
+    <item android:title="@string/view_complaint_string">
+        <menu>
+            <group android:checkableBehavior="single">
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="New User">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/add_user"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Add New User" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/exit_string">
+        <menu>
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/logout_string">
+            </item>
+        </menu>
+    </item>
+
+
+</menu>

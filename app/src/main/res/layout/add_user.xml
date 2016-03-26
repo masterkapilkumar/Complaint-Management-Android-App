@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ccd8ff">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:id="@+id/tool">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="50dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="First Name"
+                android:ems="10"
+                android:id="@+id/first_name"
+                android:layout_marginTop="30dp"
+                android:layout_alignParentEnd="true"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="Entry Number"
+                android:ems="10"
+                android:id="@+id/entry_num"
+                android:layout_below="@+id/email_id"
+                android:layout_marginTop="10dp"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/user_name"
+                android:hint="User Name"
+                android:layout_below="@+id/entry_num"
+                android:layout_marginTop="30dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:hint="Password"
+                android:id="@+id/password"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/user_name"
+                android:layout_centerHorizontal="true" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:hint="Confirm Password"
+                android:id="@+id/confirm_password"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/password"
+                android:layout_centerHorizontal="true" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Last Name"
+                android:ems="10"
+                android:id="@+id/last_name"
+                android:layout_below="@+id/first_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp" />
+
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="38dp"
+                android:text="Submit"
+                android:id="@+id/add_usr_btn"
+                android:layout_below="@+id/confirm_password"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="#0033cc"
+                android:textColor="#ffffff" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:id="@+id/email_id"
+                android:hint="abc@email.com"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/last_name"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>
