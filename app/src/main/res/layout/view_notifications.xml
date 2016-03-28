@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/comment_list"
+    android:layout_below="@+id/comp_det">
+
+    <TextView
+        android:id="@+id/no_notifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="No Comments Yet!"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center_horizontal" />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/notifiList"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentStart="true" />
+
+</LinearLayout>

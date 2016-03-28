@@ -30,6 +30,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
 
+//This class is for displaying list view items for notifications, complaint list and comments list
 public class ListAdapter extends ArrayAdapter<JSONObject> {
 
     static private final String TAG = "Complaints-App";
@@ -61,6 +62,7 @@ public class ListAdapter extends ArrayAdapter<JSONObject> {
 
         try {
 
+            //set the values of the fields when the listview is created
             title.setText(complaints.get(position).getString("title"));
 
             author.setText(complaints.get(position).getString("author"));
@@ -91,7 +93,7 @@ public class ListAdapter extends ArrayAdapter<JSONObject> {
                 });
             }
 
-
+            //set a click listener on upvote button
             like.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -99,6 +101,7 @@ public class ListAdapter extends ArrayAdapter<JSONObject> {
                 }
             });
 
+            //set a click listener on downvote button
             dislike.setOnClickListener(new View.OnClickListener()
             {
                 @Override
@@ -117,6 +120,7 @@ public class ListAdapter extends ArrayAdapter<JSONObject> {
         return itemView;
     }
 
+    //highlight the upvote button
     public void likeclick(View view, int complaint_id) {
         Button like = (Button) view.findViewById(R.id.like);
         Button dislike = (Button) view.findViewById(R.id.dislike);
@@ -148,6 +152,7 @@ public class ListAdapter extends ArrayAdapter<JSONObject> {
         queue.add(myReq);
     }
 
+    //highlight the downvote button
     public void dislikeclick(View view, int complaint_id) {
         Button dislike = (Button) view.findViewById(R.id.dislike);
         Button like = (Button) view.findViewById(R.id.like);
